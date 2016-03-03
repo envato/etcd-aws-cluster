@@ -146,6 +146,7 @@ export ETCD_INITIAL_CLUSTER_STATE=existing
 export ETCD_NAME=$ec2_instance_id
 export ETCD_INITIAL_CLUSTER="$etcd_initial_cluster"
 export ETCD_PROXY=$etcd_proxy
+export EC2_INSTANCE_IP="$ec2_instance_ip"
 EOF
 
 # otherwise I was already listed as a member so assume that this is a new cluster
@@ -164,6 +165,7 @@ else
 export ETCD_INITIAL_CLUSTER_STATE=new
 export ETCD_NAME=$ec2_instance_id
 export ETCD_INITIAL_CLUSTER="$etcd_initial_cluster"
+export EC2_INSTANCE_IP="$ec2_instance_ip"
 EOF
 fi
 
